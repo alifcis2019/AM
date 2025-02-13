@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AM Landing</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      function showTab(tabId) {
+        // Hide all tab contents
+        document.querySelectorAll('.tab-content').forEach((tab) => {
+          tab.classList.add('hidden')
+        })
+
+        // Show the selected tab
+        document.getElementById(tabId).classList.remove('hidden')
+
+        // Remove active styles from all buttons
+        document.querySelectorAll('.tab-button').forEach((button) => {
+          button.classList.remove('border-green-500', 'text-green-600')
+        })
+
+        // Add active styles to the clicked button
+        event.target.classList.add('border-green-500', 'text-green-600')
+      }
+
+      // Set default active tab
+      document.addEventListener('DOMContentLoaded', () => {
+        showTab('starter')
+      })
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

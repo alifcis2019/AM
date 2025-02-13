@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+@import '@splidejs/vue-splide/css';
+
+@import '@splidejs/vue-splide/css/skyblue';
+@import '@splidejs/vue-splide/css/sea-green';
+@import '@splidejs/vue-splide/css/core';
+/* For webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #101828; /* Use the CSS variable for the thumb color */
+  border-radius: 50%; /* Optional: make the thumb rounded */
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 20px; /* Optional: make the track rounded */
+  background-color: #f1f1f1; /* You can also use a variable here for the track */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: 8px;
+  scrollbar-color: #101828 white;
+}
