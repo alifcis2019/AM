@@ -1,22 +1,48 @@
 <template>
   <div>
-    <HomeBanner></HomeBanner>
-    <HomeSlider></HomeSlider>
-    <HomeNews></HomeNews>
-    <HomeFeatures></HomeFeatures>
-    <HomeSocial></HomeSocial>
-    <HomeContent></HomeContent>
-    <HomePricing></HomePricing>
-    <HomeTesimonials></HomeTesimonials>
+    <section class="banner">
+      <HomeBanner />
+    </section>
+
+    <section class="slider">
+      <HomeSlider />
+    </section>
+
+    <section class="news">
+      <HomeNews />
+    </section>
+
+    <section class="features">
+      <HomeFeatures />
+    </section>
+
+    <section class="social">
+      <HomeSocial />
+    </section>
+
+    <section class="content">
+      <HomeContent />
+    </section>
+
+    <section class="pricing">
+      <HomePricing />
+    </section>
+
+    <section class="testimonials">
+      <HomeTestimonials />
+    </section>
   </div>
 </template>
+
 <script setup>
-import HomeBanner from './Components/HomeBanner.vue'
-import HomeNews from './Components/HomeNews.vue'
-import HomeSlider from './Components/HomeSlider.vue'
-import HomeFeatures from './Components/HomeFeatures.vue'
-import HomeSocial from './Components/HomeSocial.vue'
-import HomeTesimonials from './Components/HomeTesimonials.vue'
-import HomeContent from './Components/HomeContent.vue'
-import HomePricing from './Components/HomePricing.vue'
+import { defineAsyncComponent } from 'vue'
+
+const HomeBanner = defineAsyncComponent(() => import('./Components/HomeBanner.vue'))
+const HomeSlider = defineAsyncComponent(() => import('./Components/HomeSlider.vue'))
+const HomeNews = defineAsyncComponent(() => import('./Components/HomeNews.vue'))
+const HomeFeatures = defineAsyncComponent(() => import('./Components/HomeFeatures.vue'))
+const HomeSocial = defineAsyncComponent(() => import('./Components/HomeSocial.vue'))
+const HomeContent = defineAsyncComponent(() => import('./Components/HomeContent.vue'))
+const HomePricing = defineAsyncComponent(() => import('./Components/HomePricing.vue'))
+const HomeTestimonials = defineAsyncComponent(() => import('./Components/HomeTesimonials.vue'))
 </script>
