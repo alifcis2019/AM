@@ -13,6 +13,13 @@ const router = createRouter({
       path: '/logIn',
       name: 'logInPage',
       component: logInPage,
+      beforeEnter(to, from, next) {
+        if (window.$cookies.get('unlimited-token')) {
+          next({ name: 'home' }) // ✅ Redirect logged-in users to home
+        } else {
+          next() // ✅ Allow non-logged-in users to access /logIn
+        }
+      },
     },
   ],
 })

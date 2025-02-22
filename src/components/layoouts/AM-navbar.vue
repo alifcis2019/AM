@@ -1,25 +1,35 @@
 <template>
   <nav
-    class="bg-white dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600"
+    class="bg-white dark:bg-gray-900 w-full fixed shadow-lg opacity-90 hover:opacity-100 z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600"
   >
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img :src="images.logo" class="h-12 w-24 rounded-full" alt="Flowbite Logo" />
-        >
       </router-link>
       <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-8">
-        <router-link
-          to="/logIn"
-          class="relative inline-flex items-center gap-2 font-semibold text-white bg-transparent overflow-hidden hover:opacity-90 before:absolute"
-        >
-          LogIn
-        </router-link>
-        <router-link
-          to="/logIn"
-          class="relative inline-flex items-center gap-2 px-6 py-3 font-semibold text-blue-50 bg-gradient-to-tr from-blue-900/30 via-blue-900/70 to-blue-900/30 ring-4 ring-blue-900/20 rounded-full overflow-hidden hover:opacity-90 transition-opacity before:absolute before:top-4 before:left-1/2 before:-translate-x-1/2 before:w-[100px] before:h-[100px] before:rounded-full before:bg-gradient-to-b before:from-blue-50/10 before:blur-xl"
-        >
-          Register
-        </router-link>
+        <div v-if="!authStore.isLogin" class="flex items-center gap-4">
+          <router-link
+            to="/logIn"
+            class="relative inline-flex items-center gap-2 font-semibold text-white bg-transparent overflow-hidden hover:opacity-90 before:absolute"
+          >
+            LogIn
+          </router-link>
+          <router-link
+            to="/logIn"
+            class="relative inline-flex items-center gap-2 px-6 py-3 font-semibold text-blue-50 bg-gradient-to-tr from-blue-900/30 via-blue-900/70 to-blue-900/30 ring-4 ring-blue-900/20 rounded-full overflow-hidden hover:opacity-90 transition-opacity before:absolute before:top-4 before:left-1/2 before:-translate-x-1/2 before:w-[100px] before:h-[100px] before:rounded-full before:bg-gradient-to-b before:from-blue-50/10 before:blur-xl"
+          >
+            Register
+          </router-link>
+        </div>
+        <div v-else class="flex items-center gap-4">
+          <h3 class="text-white text-2xl">name</h3>
+          <button
+            @click="authStore.logout"
+            class="relative inline-flex items-center gap-2 px-6 py-3 font-semibold text-blue-50 bg-gradient-to-tr from-blue-900/30 via-blue-900/70 to-blue-900/30 ring-4 ring-blue-900/20 rounded-full overflow-hidden hover:opacity-90 transition-opacity before:absolute before:top-4 before:left-1/2 before:-translate-x-1/2 before:w-[100px] before:h-[100px] before:rounded-full before:bg-gradient-to-b before:from-blue-50/10 before:blur-xl"
+          >
+            logout
+          </button>
+        </div>
 
         <button
           data-collapse-toggle="navbar-sticky"
@@ -90,4 +100,6 @@
 <script setup>
 import useImages from '../../helpers/images.helper'
 const images = useImages()
+import { useAuthStore } from '@/stores/Auth/auth.store'
+const authStore = useAuthStore()
 </script>

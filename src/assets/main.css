@@ -6,7 +6,7 @@
 @import '@splidejs/vue-splide/css/core';
 /* For webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 10px; /* Adjust the width of the scrollbar */
+  width: 5px; /* Adjust the width of the scrollbar */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -21,6 +21,12 @@
 
 /* For Firefox */
 * {
-  scrollbar-width: 8px;
+  scrollbar-width: thin;
   scrollbar-color: #101828 white;
+}
+@theme {
+  --font-english: 'Tajawal', 'sans-serif';
+  --font-arabic: 'Tajawal', 'sans-serif';
+  --color-primary: #5a4fd320;
+  /* ... */
 }

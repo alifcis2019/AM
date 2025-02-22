@@ -6,6 +6,6 @@ import AMFooter from './components/layoouts/AM-footer.vue'
 
 <template>
   <AMNavbar />
-  <RouterView />
+  <RouterView class="mt-20" />
   <AMFooter />
 </template>

@@ -1,5 +1,7 @@
 <template>
-  <section class="bg-white dark:bg-gray-900 h-[100vh] flex items-center justify-center">
+  <section
+    class="bg-white dark:bg-gray-900 md:min-h-[800px] max-h-[100vh] flex items-center justify-center"
+  >
     <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
       <div class="mr-auto place-self-center lg:col-span-7">
         <h1
@@ -56,11 +58,12 @@
         </a>
       </div>
       <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-        <img
-          src="https://beon-system.unlimited-software.com/landing/content/assets/images/home/Dashboard.webp"
-          alt="mockup"
-        />
+        <img :src="images.hero" alt="mockup" />
       </div>
     </div>
   </section>
 </template>
+<script setup>
+import useImages from '@/helpers/images.helper'
+const images = useImages()
+</script>
